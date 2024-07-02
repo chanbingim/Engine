@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Public\2D">
+      <UniqueIdentifier>{9469f5d9-0cb1-42cd-a2bf-db16be67c8a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\2D">
+      <UniqueIdentifier>{d2f6b3d2-6929-4919-b41c-70ab43ff23b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="CDircectX9APP.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameRender.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="PreCompiled.h" />
+    <ClInclude Include="EngineHeader.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="2D\GameObject.h">
+      <Filter>Public\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="2D\TransformComponent.h">
+      <Filter>Public\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="2D\Triangle.h">
+      <Filter>Public\2D</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="CDircectX9APP.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameRender.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Private\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>Private\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Private\2D</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="GameEngine.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameEngine.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
