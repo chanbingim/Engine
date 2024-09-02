@@ -116,12 +116,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\Users\gimch\OneDrive\바탕 화면\새 폴더 (2)\GameEngine\MathMoudle;C:\Users\gimch\OneDrive\바탕 화면\새 폴더 (2)\GameEngine\RenderMoudule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\gimch\OneDrive\바탕 화면\새 폴더 (2)\GameEngine\MathMoudle;C:\Users\gimch\OneDrive\바탕 화면\새 폴더 (2)\GameEngine\RenderMoudule;C:\Users\gimch\OneDrive\바탕 화면\새 폴더 (2)\GameEngine\2DEngine;"C:\Users\gimch\OneDrive\바탕 화면\imgui-docking\examples\example_win32_directx9";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>d3dx9.lib;d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)/Lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,28 +144,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="2D\GameObject.h" />
-    <ClInclude Include="2D\Triangle.h" />
-    <ClInclude Include="2D\TransformComponent.h" />
     <ClInclude Include="CDircectX9APP.h" />
     <ClInclude Include="CGameRender.h" />
     <ClInclude Include="EngineHeader.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="imGui\imconfig.h" />
+    <ClInclude Include="imGui\imgui.h" />
+    <ClInclude Include="imGui\imgui_impl_dx9.h" />
+    <ClInclude Include="imGui\imgui_impl_opengl3.h" />
+    <ClInclude Include="imGui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="imGui\imgui_impl_win32.h" />
+    <ClInclude Include="imGui\imgui_internal.h" />
+    <ClInclude Include="imGui\imstb_rectpack.h" />
+    <ClInclude Include="imGui\imstb_textedit.h" />
+    <ClInclude Include="imGui\imstb_truetype.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Layer.h" />
     <ClInclude Include="PreCompiled.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="resource1.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CDircectX9APP.cpp" />
     <ClCompile Include="CGameRender.cpp" />
     <ClCompile Include="GameEngine.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="imGui\imgui.cpp" />
+    <ClCompile Include="imGui\imgui_demo.cpp" />
+    <ClCompile Include="imGui\imgui_draw.cpp" />
+    <ClCompile Include="imGui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="imGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imGui\imgui_tables.cpp" />
+    <ClCompile Include="imGui\imgui_widgets.cpp" />
     <ClCompile Include="InputManager.cpp" />
-    <ClCompile Include="Triangle.cpp" />
-    <ClCompile Include="TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="GameEngine.ico" />
@@ -174,6 +187,9 @@
     <ResourceCompile Include="GameEngine.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\2DEngine\2DEngine.vcxproj">
+      <Project>{5b4c69cf-3a19-4b48-b63f-c75722323853}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\MathMoudle\MathMoudle.vcxproj">
       <Project>{58da48ad-c23e-4136-b10a-751f8082b097}</Project>
     </ProjectReference>

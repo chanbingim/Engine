@@ -10,7 +10,7 @@ public :
 	static constexpr float HalfPI = { 1.57079632679f };
 	static constexpr float InvPI = { 0.31830988618f };
 	static constexpr char InvalidHashName[] = "!@CK_INVALIDHASH#$";
-	static const std::size_t InvalidHash;
+	static const std::size_t InvalidHash = 0;
 
 	FORCEINLINE static constexpr int TruncToInt(float InFloat)
 	{

@@ -13,5 +13,55 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\2D">
+      <UniqueIdentifier>{fceb0ad3-8701-47b3-9021-e2bc869713b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\2D">
+      <UniqueIdentifier>{7362b7a0-e62b-4319-aa76-959beafb1fde}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2D\GameObject.cpp">
+      <Filter>소스 파일\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="2D\TimeUtil.cpp">
+      <Filter>소스 파일\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="2D\TransformComponent.cpp">
+      <Filter>소스 파일\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="2D\Triangle.cpp">
+      <Filter>소스 파일\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2D\GameObject.h">
+      <Filter>헤더 파일\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="2D\TimeUtil.h">
+      <Filter>헤더 파일\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="2DEngineHeader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="2D\TransformComponent.h">
+      <Filter>헤더 파일\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="2D\Triangle.h">
+      <Filter>헤더 파일\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="PreCompiled.h" />
+    <ClInclude Include="Texture.h">
+      <Filter>헤더 파일\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraObject.h">
+      <Filter>헤더 파일\2D</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

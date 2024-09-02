@@ -1,28 +1,29 @@
-ï»¿//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ì—ì„œ ìƒì„±í•œ í¬í•¨ íŒŒì¼ì…ë‹ˆë‹¤.
-// ë‹¤ìŒì—ì„œ ì‚¬ìš© GameEngine.rc
-
-#define IDS_APP_TITLE			103
-
-#define IDR_MAINFRAME			128
-#define IDD_GAMEENGINE_DIALOG	102
-#define IDI_GAMEENGINE			107
-#define IDI_SMALL				108
-#define IDC_GAMEENGINE			109
-#define IDC_MYICON				2
-#ifndef IDC_STATIC
-#define IDC_STATIC				-1
-#endif
-
-// ë‹¤ìŒì€ ìƒˆ ê°œì²´ì— ì‚¬ìš©í•  ê¸°ë³¸ê°’ì…ë‹ˆë‹¤.
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++¿¡¼­ »ı¼ºÇÑ Æ÷ÇÔ ÆÄÀÏÀÔ´Ï´Ù.
+// GameEngine.rc¿¡¼­ »ç¿ëµÇ°í ÀÖ½À´Ï´Ù.
 //
+#define IDR_MENU1                       101
+#define IDI_GAMEENGINE                  101
+#define IDS_APP_TITLE                   103
+#define IDD_DIALOG1                     104
+#define IDD_Hierarachy                  104
+#define IDD_Detail                      108
+#define IDC_GAMEENGINE                  109
+#define IDC_TREE1                       1001
+#define IDC_EDIT1                       1004
+#define IDC_COMBO2                      1012
+#define IDC_CHECK2                      1013
+#define ID_40001                        40001
+#define ID_40002                        40002
+#define ID_40003                        40003
+
+// Next default values for new objects
+// 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-
-#define _APS_NO_MFC					130
-#define _APS_NEXT_RESOURCE_VALUE	129
-#define _APS_NEXT_COMMAND_VALUE		32771
-#define _APS_NEXT_CONTROL_VALUE		1000
-#define _APS_NEXT_SYMED_VALUE		110
+#define _APS_NEXT_RESOURCE_VALUE        110
+#define _APS_NEXT_COMMAND_VALUE         40005
+#define _APS_NEXT_CONTROL_VALUE         1014
+#define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

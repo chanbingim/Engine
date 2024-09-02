@@ -13,11 +13,11 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Public\2D">
-      <UniqueIdentifier>{9469f5d9-0cb1-42cd-a2bf-db16be67c8a1}</UniqueIdentifier>
+    <Filter Include="Private\ImGui">
+      <UniqueIdentifier>{84ccd673-b674-43fc-814a-6639ff690e02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Private\2D">
-      <UniqueIdentifier>{d2f6b3d2-6929-4919-b41c-70ab43ff23b3}</UniqueIdentifier>
+    <Filter Include="Public\ImGUI">
+      <UniqueIdentifier>{7a1bad1a-c15c-4b62-9919-a9bb910fb6d4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -25,9 +25,6 @@
       <Filter>Public</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
       <Filter>Public</Filter>
     </ClInclude>
     <ClInclude Include="GameEngine.h">
@@ -43,20 +40,44 @@
     <ClInclude Include="EngineHeader.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="resource1.h">
+    <ClInclude Include="resource.h">
       <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="2D\GameObject.h">
-      <Filter>Public\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="2D\TransformComponent.h">
-      <Filter>Public\2D</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="2D\Triangle.h">
-      <Filter>Public\2D</Filter>
+    <ClInclude Include="Layer.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imconfig.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imgui.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imgui_impl_dx9.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imgui_impl_win32.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imgui_internal.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imstb_rectpack.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imstb_textedit.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imstb_truetype.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imgui_impl_opengl3.h">
+      <Filter>Public\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imGui\imgui_impl_opengl3_loader.h">
+      <Filter>Public\ImGUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,17 +90,32 @@
     <ClCompile Include="CGameRender.cpp">
       <Filter>Private</Filter>
     </ClCompile>
+    <ClCompile Include="imGui\imgui.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imGui\imgui_demo.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imGui\imgui_draw.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imGui\imgui_impl_dx9.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imGui\imgui_impl_win32.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imGui\imgui_tables.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imGui\imgui_widgets.cpp">
+      <Filter>Private\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="InputManager.cpp">
-      <Filter>Private</Filter>
+      <Filter>Private\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="Triangle.cpp">
-      <Filter>Private\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="TransformComponent.cpp">
-      <Filter>Private\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Private\2D</Filter>
+    <ClCompile Include="imGui\imgui_impl_opengl3.cpp">
+      <Filter>Private\ImGui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

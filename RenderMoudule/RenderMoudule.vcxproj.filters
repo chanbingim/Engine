@@ -13,21 +13,27 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Private\2D">
+      <UniqueIdentifier>{20de5a19-0b68-44fc-894f-4f5fae2d3563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\2D">
+      <UniqueIdentifier>{bc973361-8e59-4cb9-915d-1341b0fc44e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vertex2D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
     <ClInclude Include="PreCompiled.h">
       <Filter>Public</Filter>
     </ClInclude>
     <ClInclude Include="RenderHeader.h">
       <Filter>Public</Filter>
     </ClInclude>
+    <ClInclude Include="2D\Vertex2D.h">
+      <Filter>Public\2D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Vertex2D.cpp">
-      <Filter>Private</Filter>
+    <ClCompile Include="2D\Vertex2D.cpp">
+      <Filter>Private\2D</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

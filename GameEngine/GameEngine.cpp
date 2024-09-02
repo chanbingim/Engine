@@ -1,6 +1,7 @@
 ﻿// GameEngine.cpp : 애플리케이션에 대한 진입점을 정의합니다.
 //
 
+#include <windows.h>
 #include "framework.h"
 #include "GameEngine.h"
 #include "PreCompiled.h"
@@ -13,7 +14,9 @@ WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 GameEngine::CGame GameScene;
 
-HWND hWnd;
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+HWND hWnd, temp;
 int SCREEN_WIDTH = 1440;
 int SCREEN_HEIGHT = 900;
 
@@ -21,6 +24,8 @@ int SCREEN_HEIGHT = 900;
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+LRESULT CALLBACK    HiearachyProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam);
+LRESULT CALLBACK    DetailProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
@@ -38,15 +43,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDC_GAMEENGINE, szWindowClass, MAX_LOADSTRING);
 
     MyRegisterClass(hInstance);
-   
+    
     // 애플리케이션 초기화를 수행합니다:
     if (!InitInstance (hInstance, nCmdShow))
     {
         return FALSE;
     }
-    GameScene.InitD3D(hWnd, SCREEN_WIDTH, SCREEN_HEIGHT);
-    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_GAMEENGINE));
 
+    //자체적으로 제작한 다이렉트X 초기화입니다.
+    GameScene.InitD3D(hWnd, hInstance, SCREEN_WIDTH, SCREEN_HEIGHT);
+    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_GAMEENGINE));
+   
     MSG msg;
 
     // 기본 메시지 루프입니다:
@@ -65,7 +72,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            GameScene.Run();
+          GameScene.Run();
         }
     }
 
@@ -96,6 +103,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.lpszMenuName   = NULL;
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(NULL, IDI_APPLICATION);
+    RegisterClassExW(&wcex);
 
     return RegisterClassExW(&wcex);
 }
@@ -122,7 +130,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
-   ShowWindow(hWnd, nCmdShow);
+   ShowWindow(hWnd, SW_SHOWDEFAULT);
    UpdateWindow(hWnd);
 
    return TRUE;
@@ -140,13 +148,21 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    if (ImGui_ImplWin32_WndProcHandler(hWnd, message, wParam, lParam))
+        return true;
+
     switch (message)
     {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-        }
+    case WM_CREATE :
+
         break;
+
+    case WM_COMMAND:
+    {
+        int wmId = LOWORD(wParam);
+    }
+    break;
+
     case WM_PAINT:
         {
             PAINTSTRUCT ps;
@@ -156,12 +172,62 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_DESTROY:
+        DestroyWindow(hWnd);
         PostQuitMessage(0);
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }
     return 0;
+}
+
+LRESULT CALLBACK HiearachyProc(HWND hDlg, UINT iMessage, WPARAM wParam, LPARAM lParam)
+{
+    UNREFERENCED_PARAMETER(lParam);
+
+    HDC hdc;
+    PAINTSTRUCT ps;
+
+    switch (iMessage)
+    {
+    case WM_CREATE:
+
+        break;
+    case WM_CLOSE :
+        EndDialog(hDlg, 0);
+        return (INT_PTR)FALSE;
+    case WM_PAINT:
+        hdc = BeginPaint(hWnd, &ps);
+
+        EndPaint(hWnd, &ps);
+        break;
+    }
+
+    return (INT_PTR)FALSE;
+}
+
+LRESULT CALLBACK DetailProc(HWND hDlg, UINT iMessage, WPARAM wParam, LPARAM lParam)
+{
+    UNREFERENCED_PARAMETER(lParam);
+
+    HDC hdc;
+    PAINTSTRUCT ps;
+
+    switch (iMessage)
+    {
+    case WM_CREATE:
+
+        break;
+    case WM_CLOSE:
+        EndDialog(hDlg, 0);
+        return (INT_PTR)FALSE;
+    case WM_PAINT:
+        hdc = BeginPaint(hWnd, &ps);
+
+        EndPaint(hWnd, &ps);
+        break;
+    }
+    return (INT_PTR)FALSE;
 }
 
 // 정보 대화 상자의 메시지 처리기입니다.

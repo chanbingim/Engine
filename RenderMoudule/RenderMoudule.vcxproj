@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="2D\Vertex2D.h" />
     <ClInclude Include="PreCompiled.h" />
     <ClInclude Include="RenderHeader.h" />
-    <ClInclude Include="Vertex2D.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Vertex2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MathMoudle\MathMoudle.vcxproj">
       <Project>{58da48ad-c23e-4136-b10a-751f8082b097}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2D\Vertex2D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

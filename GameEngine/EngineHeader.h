@@ -7,15 +7,15 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
-#define D3DFMT_CUSTOMVERTEX (D3DFVF_XYZRHW | D3DFVF_DIFFUSE)
+#include "imGui/imgui.h"
+#include "imGui/imgui_impl_dx9.h"
+#include "imGui/imgui_impl_win32.h"
 
 #include "InputManager.h"
+#include "dxgi.h"
 #include "CDircectX9APP.h"
 #include "CGameRender.h"
 
-#include "2D/TransformComponent.h"
-#include "2D/GameObject.h"
-#include "2D/Triangle.h"
+#include "Layer.h"
 
 using namespace GameEngine;
-using namespace GameEngine2D;
